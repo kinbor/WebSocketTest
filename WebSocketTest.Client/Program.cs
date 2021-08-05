@@ -13,6 +13,9 @@ namespace WebSocketTest.Client
         {
             Console.WriteLine("正在连接服务器。。。");
             var ws = new WebSocket("ws://127.0.0.1:9090");
+            /*
+             * 服务器若使用证书，协议ws应改为wss
+             */
             ws.Opened += Ws_Opened;
             ws.Closed += Ws_Closed;
             ws.MessageReceived += Ws_MessageReceived;

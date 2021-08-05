@@ -16,6 +16,11 @@ namespace WebSocketTest.Server
             //创建
             //本地测试的配置IP和端口，自行设置
             WebSocketServer server = new WebSocketServer("ws://0.0.0.0:9090");
+            /*
+             * 使用证书，则协议应改为wss
+             * wss://0.0.0.0:9090
+             * server.Certificate = new System.Security.Cryptography.X509Certificates.X509Certificate2("", "");
+             */
             //出错后进行重启
             server.RestartAfterListenError = true;
 
