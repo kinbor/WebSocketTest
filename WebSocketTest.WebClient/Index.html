@@ -15,8 +15,10 @@
             inc.innerHTML += "connecting to server ..<br/>";
 
             // create a new websocket and connect
-            // if server use Certificate, modify protocol type "ws" to "wss"
-            window.ws = new wsImpl('ws://127.0.0.1:9090/');
+            // if server use Certificate, modify protocol type "ws" to "wss", and use domainName not ip address
+            // ws://127.0.0.1:9090
+            // wss://www.test.com:9090
+            window.ws = new wsImpl('wss://smarthn.trxnyyun.com:9090');
 
             // when data is comming from the server, this metod is called
             ws.onmessage = function (evt) {

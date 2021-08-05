@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Authentication;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -19,7 +20,8 @@ namespace WebSocketTest.Server
             /*
              * 使用证书，则协议应改为wss
              * wss://0.0.0.0:9090
-             * server.Certificate = new System.Security.Cryptography.X509Certificates.X509Certificate2("", "");
+             * server.Certificate = new System.Security.Cryptography.X509Certificates.X509Certificate2("D:\Documents\Common\mykey\CA\www.test.com.pfx", "123456789");
+             * server.EnabledSslProtocols = SslProtocols.Tls12 | SslProtocols.Ssl3 | SslProtocols.Tls11 | SslProtocols.Tls;
              */
             //出错后进行重启
             server.RestartAfterListenError = true;

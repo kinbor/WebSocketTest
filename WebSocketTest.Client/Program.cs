@@ -14,7 +14,10 @@ namespace WebSocketTest.Client
             Console.WriteLine("正在连接服务器。。。");
             var ws = new WebSocket("ws://127.0.0.1:9090");
             /*
-             * 服务器若使用证书，协议ws应改为wss
+             * 服务器若使用证书，协议ws应改为wss，且证书应该是有效证书与域名匹配
+             * 使用ws协议可以是IP地址，使用wss就要使用域名了，因为颁发证书时确定了使用证书的域名。
+             * ws://127.0.0.1:9090
+             * wss://www.test.com:9090
              */
             ws.Opened += Ws_Opened;
             ws.Closed += Ws_Closed;
